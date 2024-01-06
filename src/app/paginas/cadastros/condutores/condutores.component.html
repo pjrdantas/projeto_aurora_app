@@ -1,0 +1,78 @@
+<mat-card>
+  <mat-toolbar class="barra-titulo">
+    <div class="button-row">
+      <button mat-button class="botao-verde" matTooltip="Atualizar lista" (click)="ngOnInit()"><i class="fas fa-sync-alt"></i> Atualizar
+      </button>
+    </div>
+    <span class="fill-remaining-space"></span>
+    <mat-label>{{titulo}}</mat-label>
+    <span class="fill-remaining-space"></span>
+
+    <div class="button-row">
+      <button mat-button class="botao-verde" matTooltip="Incluir Novo Condutor" (click)="onAdd()"><i class="fa fa-plus" aria-hidden="true"></i> Incluir
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-form-field>
+    <mat-label>Busca <i class="fa fa-search" aria-hidden="true"></i></mat-label>
+    <input matInput type="text" name="search"  [(ngModel)]="filter"  placeholder="Filtro" matTooltip="Realizar uma busca na lista">
+  </mat-form-field>
+
+
+
+  <table class="table table-hover table-striped table-sm  linha-lista">
+    <thead>
+      <tr>
+        <th style="width:25px" class="label-tam" [appSort]="condutores" data-order="desc" data-name="cdCondutor" matTooltip="Ordenar por Código">
+          Código <i class="fas fa-sort"></i>
+        </th>
+        <th style="width:200px" class="label-tam"  [appSort]="condutores" data-order="desc" data-name="nmCondutor" matTooltip="Ordenar por Nome ">
+          Nome Completo <i class="fas fa-sort"></i>
+        </th>
+        <th style="width:60px" class="label-tam"  [appSort]="condutores" data-order="desc" data-name="numeroCpf" matTooltip="Ordenar por CPF">
+          CPF <i class="fas fa-sort"></i>
+        </th>
+        <th style="width:60px" class="label-tam"  [appSort]="condutores" data-order="desc" data-name="numeroCnh" matTooltip="Ordenar por CNH">
+          CNH <i class="fas fa-sort"></i>
+        </th>
+        <th style="width:220px" class="label-tam" [appSort]="condutores" data-order="desc" data-name="cdFornecedor" matTooltip="Ordenar por Fornecedor">
+          Fornecedor <i class="fas fa-sort"></i>
+        </th>
+        <th style="width:20px"  class="label-tam"  [appSort]="condutores" data-order="desc" data-name="flagAtivoString" matTooltip="Ordenar por Status">
+          Ativo <i class="fas fa-sort"></i>
+        </th>
+        <th style="width:40px; text-align: center;" class="label-tam">
+          Ações
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let condutor of condutores | filter:filter | paginate: { itemsPerPage: contador, currentPage: paginaAtual }; let i = index;">
+        <td style="width:25px">{{ condutor.cdCondutor | number:'6.0'}}</td>
+        <td style="width:200px">{{ condutor.nmCondutor }}</td>
+        <td style="width:60px">{{ condutor.numeroCpf | cPF }}</td>
+        <td style="width:60px">{{ condutor.numeroCnh | number:'11.0'}}</td>
+        <td style="width:220px">{{condutor.cdFornecedor}} - {{ condutor.nmFornecedor }}</td>
+        <td style="width:20px">{{ condutor.flagAtivoString }}</td>
+        <td style="width:40px; text-align: center;">
+          <a (click)="onEditar(condutor.cdCondutor, i);">
+            <span class="icon" refresh update matTooltip="Editar Condutor"><i class="fal fa-edit"></i></span></a>
+          &nbsp;&nbsp;&nbsp;
+          <a (click)="onRemove(condutor.cdCondutor, i);">
+            <span class="icon2" refresh update matTooltip="Excluir Condutor"><i class="fal fa-trash-alt"></i></span></a>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+  <div class="linha-lista2">
+    <pagination-controls (pageChange)="paginaAtual = $event" previousLabel=" Anterior " nextLabel=" Próximo ">
+    </pagination-controls>
+  </div>
+  <div class="loading-spinner">
+    <mat-spinner *ngIf="condutorService.loading" [diameter]="60" ></mat-spinner>
+  </div>
+  <div class="tabela-rodape"></div>
+</mat-card>

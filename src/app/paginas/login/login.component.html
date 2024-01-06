@@ -1,0 +1,33 @@
+<div class="card-login">
+
+  <div class="card-head-login">Projeto AURORA</div>
+  <div>
+    <form [formGroup]="form" (submit)="fazerLogin()">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <mat-label class="green-color">Usuário</mat-label>
+          <input matInput type="text" formControlName="usuarioForm" placeholder="Digite o Login do Usuário"
+            [(ngModel)]="operador.usuario" required>
+          <mat-error>"O Nome do Usuário é obrigatório."</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label class="green-color">Senha</mat-label>
+          <input matInput type="text" formControlName="senhaForm" placeholder="Digite a Senha"
+            [type]="hide ? 'password' : 'text'" [(ngModel)]="operador.senha" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error>A senha do Usuário é obrigatório.</mat-error>
+        </mat-form-field>
+
+        <mat-card-actions>
+          <button mat-stroked-button button class="green-button" type="submit" [disabled]="form.invalid">
+            <i class="fa fa-lock" aria-hidden="true"></i> Autenticar
+          </button>
+        </mat-card-actions>
+      </mat-card-content>
+    </form>
+  </div>
+</div>
