@@ -19,7 +19,7 @@
           cursor: pointer;
           width: 1rem;
           height: 1rem;
-          color: #5cb85c !important;
+          color: #5379f5 !important;
           background-color: transparent;
           border: none;
           font-size: 12px;
@@ -30,7 +30,7 @@
           margin-left: 0.5rem;
           font-size: 15px;
           font-weight: 600px;
-          color: #5cb85c;
+          color: #5379f5;
       }
   }
 }
@@ -56,7 +56,7 @@
           display: flex;
           align-items: center;
           height: 1.5rem;
-          color: #5cb85c;
+          color: #5379f5;
           text-decoration: none;
           transition: all .3s ease;
           font-size: 15 px;
@@ -90,12 +90,12 @@
   .menu-collapse-icon,
   .sidenav-link-icon,
   .sidenav-link-text {
-      color: #5cb85c;
+      color: #5379f5;
   }
 }
 
 .active-sublevel {
-  color:#5cb85c!important;
+  color:#5379f5!important;
   // opacity: 1 !important;
 }
 
@@ -117,7 +117,7 @@
           display: flex;
           align-items: center;
           height: 1.5rem;
-          color: #5cb85c;
+          color: #5379f5;
           text-decoration: none;
           transition: all .3s ease;
 
@@ -127,7 +127,7 @@
               min-width: 0.5rem;
               margin: 0 0.2rem;
               text-align: right;
-              color:#5cb85c!important;
+              color:#5379f5!important;
           }
 
           .sublevel-link-text {

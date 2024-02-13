@@ -17,12 +17,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AngularMaterialModule } from 'src/app/angular-material.module';
 import { AppComponent } from 'src/app/app.component';
 import { CadastrosRoutingModule } from './cadastros-routing.module';
-import { DialogCondutorCadastroComponent } from './condutores/dialog-condutor-cadastro/dialog-condutor-cadastro.component';
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CPFPipe } from 'src/app/shared/util/cpf.pipe';
 import { SortDirective } from './sort.directive';
 import { KzMaskDirective } from './kz-mask.directive';
 
+import { DialogCondutorCadastroComponent } from './condutores/dialog-condutor-cadastro/dialog-condutor-cadastro.component';
 import { DialogEmailDanfeComponent } from './email-danfe/dialog-email-danfe/dialog-email-danfe.component';
 import { DialogVeiculoCadastroComponent } from './veiculos/dialog-veiculo-cadastro/dialog-veiculo-cadastro.component';
 import { CondutoresComponent } from './condutores/condutores.component';

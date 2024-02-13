@@ -6,7 +6,7 @@
 
 .barra-titulo {
   color:  #f4f7fa;
-  background:#5cb85c;
+  background:#5379f5;
   font-size: 15px !important;
   border-top-left-radius:5px ;
   border-top-right-radius:5px ;
@@ -48,7 +48,7 @@ table {
 
 .icon {
   font-size: 15px !important;
-  color: #5cb85c;
+  color: #5379f5;
 }
 
 .icon2 {
@@ -60,12 +60,12 @@ table {
   height: 12px !important;
   width: 12px !important;
   font-size: 12px !important;
-  color: #5cb85c;
+  color: #5379f5;
 }
 
 .tabela-rodape {
   color: #f4f7fa;
-  background: #5cb85c;
+  background: #5379f5;
   font-size: 15px !important;
   text-align: center;
   border-bottom-left-radius: 5px;
@@ -75,18 +75,18 @@ table {
 
 ::ng-deep .ngx-pagination {
   padding-left: 0px !important;
-  font-style:  #5cb85c !important;
+  font-style:  #5379f5 !important;
 }
 
 ::ng-deep .ngx-pagination .current,
 .btn-info {
-  background: #5cb85c !important;
+  background: #5379f5 !important;
   border: transparent !important;
   border-radius: 3px !important;
 }
 
 :host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
-  stroke: #0CC20C;
+  stroke: #5379f5;
 }
 
 .loading-spinner{
@@ -98,31 +98,31 @@ table {
 
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
-  color: green !important;
+  color: blue !important;
  }
 
  ::ng-deep.mat-form-field-underline {
   /*change color of underline*/
-  background-color: green !important;
+  background-color: blue !important;
 }
 
 ::ng-deep.mat-form-field-ripple {
  /*change color of underline when focused*/
- background-color: green !important;
+ background-color: blue !important;
 }
 
 thead th {
   cursor: pointer;
   margin-right: 15px;
   margin-left: 15px;
-  color: #5cb85c;
+  color: #5379f5;
 
   span {
     visibility: hidden;
   }
 
   &.active {
-    color: #5cb85c;
+    color: #5379f5;
 
     span {
       visibility: visible;

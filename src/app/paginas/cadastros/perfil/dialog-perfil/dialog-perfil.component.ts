@@ -18,7 +18,7 @@ import { PermissaoPerfil } from 'src/app/dominios/permissaoPerfil';
 import { PermissaoPerfilService } from 'src/app/services/permissaoPerfil.service';
 
 import { ErrorDialogComponent } from 'src/app/shared/error-dialog/error-dialog.component';
-import { Response } from 'src/app/dominios/response';
+
 
 export interface DialogData {
   idPerfil: number;
@@ -29,6 +29,7 @@ export interface DialogData {
   templateUrl: './dialog-perfil.component.html',
   styleUrls: ['./dialog-perfil.component.scss']
 })
+
 export class   DialogPerfilComponent implements OnInit {
   perfil: Perfil = new Perfil();
   perfilLista: Perfil[] = new Array();
