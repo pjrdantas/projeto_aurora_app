@@ -1,4 +1,4 @@
-.mat-card {
+.mat-mdc-card {
   overflow: auto;
   max-height: 650px;
   padding: 5px;
@@ -85,7 +85,7 @@ table {
   border-radius: 3px !important;
 }
 
-:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+:host ::ng-deep .mat-mdc-progress-spinner circle, .mat-mdc-progress-spinner circle {
   stroke: #5379f5;
 }
 
@@ -96,16 +96,19 @@ table {
   justify-content: center !important;
 }
 
+/*TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
   color: blue !important;
  }
 
+ /*TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
  ::ng-deep.mat-form-field-underline {
   /*change color of underline*/
   background-color: blue !important;
 }
 
+/*TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 ::ng-deep.mat-form-field-ripple {
  /*change color of underline when focused*/
  background-color: blue !important;

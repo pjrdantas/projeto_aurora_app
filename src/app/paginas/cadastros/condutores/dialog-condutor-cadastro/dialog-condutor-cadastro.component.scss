@@ -11,7 +11,7 @@
   height: 30px;
 }
 
-.dialog-controles-container .mat-form-field {
+.dialog-controles-container .mat-mdc-form-field {
   width: 100%;
   padding: 2%;
   font-size: 12px;
@@ -45,18 +45,22 @@
   height: 20px;
 }
 
-::ng-deep .mat-checkbox-checked .mat-checkbox-background,
+::ng-deep .mat-mdc-checkbox-checked .mat-checkbox-background,
 .mat-checkbox-indeterminate .mat-checkbox-background .mat-checkbox {
   background-color:#5cb85c !important;
 }
 
+/*TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+/*TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 mat-checkbox {
+	/*TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 	::ng-deep .mat-checkbox-inner-container  {
       width: 12px!important;
       height: 12px!important;
   	}
 }
 
+/*TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 ::ng-deep .mat-form-field-label {
   color:#5cb85c !important;
 }
@@ -72,16 +76,19 @@ mat-checkbox {
   height: 20px;
 }
 
+/*TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
   color: green !important;
  }
 
+ /*TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
  ::ng-deep.mat-form-field-underline {
   /*change color of underline*/
   background-color: green !important;
 }
 
+/*TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version.*/
 ::ng-deep.mat-form-field-ripple {
  /*change color of underline when focused*/
  background-color: green !important;
