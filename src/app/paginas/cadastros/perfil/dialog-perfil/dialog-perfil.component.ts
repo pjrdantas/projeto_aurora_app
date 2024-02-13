@@ -86,14 +86,14 @@ export class   DialogPerfilComponent implements OnInit {
         this.onError('Não foi possível carregar a Lista der permissões.');
         return of([]);
       })
-    ).subscribe((res) => (this.permissaoLista = res));
+    ).subscribe((res: Permissao[]) => (this.permissaoLista = res));
 
     if (this.data.idPerfil === 0) {
       this.titulo = 'Cadastrar Perfil';
       this.initializeFormGroup();
     } else {
       this.titulo = 'Editar Perfil';
-      this.perfilService.getPerfil(Number(this.data.idPerfil)).subscribe((res) => (this.perfil = res));
+      this.perfilService.getPerfil(Number(this.data.idPerfil)).subscribe((res: Perfil) => (this.perfil = res));
     }
   }
 
@@ -104,10 +104,10 @@ export class   DialogPerfilComponent implements OnInit {
       this.perfilService
         .addPerfil(this.perfil)
         .subscribe(
-          (response) => {
+          (response: Response) => {
             const res: Response = response as Response;
             if (res === null) {
-              this.perfilService.getAllPerfil().subscribe((res) => (this.perfilLista = res));
+              this.perfilService.getAllPerfil().subscribe((res: Perfil[]) => (this.perfilLista = res));
               this.snackBar.open('Perfil cadastrado com Sucesso!','',
                 {
                   duration: 4000,
@@ -126,7 +126,7 @@ export class   DialogPerfilComponent implements OnInit {
               console.error(res);
             }
           },
-          (erro) => {
+          (erro: any) => {
             this.snackBar.open('ATENÇÃO:','Ocorreu um erro ao Cadastrar o Perfil!',
               {
                 duration: 4000,
@@ -141,10 +141,10 @@ export class   DialogPerfilComponent implements OnInit {
       this.perfilService
         .updatePerfil(this.perfil)
         .subscribe(
-          (response) => {
+          (response: unknown) => {
             const res: Response = response as unknown as Response;
             if (res === null) {
-              this.perfilService.getAllPerfil().subscribe((res) => (this.perfilLista = res));
+              this.perfilService.getAllPerfil().subscribe((res: Perfil[]) => (this.perfilLista = res));
               this.snackBar.open('Perfil atualizado com Sucesso!','',
                 {
                   duration: 3000,
@@ -163,7 +163,7 @@ export class   DialogPerfilComponent implements OnInit {
               console.error(res);
             }
           },
-          (erro) => {
+          (erro: any) => {
             this.snackBar.open(
               'ATENÇÃO:','Ocorreu um erro ao Cadastrar o Perfil!',
               {
