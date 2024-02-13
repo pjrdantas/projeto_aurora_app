@@ -104,7 +104,7 @@ export class   DialogPerfilComponent implements OnInit {
       this.perfilService
         .addPerfil(this.perfil)
         .subscribe(
-          (response: Response) => {
+          (response) => {
             const res: Response = response as Response;
             if (res === null) {
               this.perfilService.getAllPerfil().subscribe((res: Perfil[]) => (this.perfilLista = res));
